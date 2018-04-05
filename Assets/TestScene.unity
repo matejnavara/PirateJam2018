@@ -1811,6 +1811,7 @@ GameObject:
   - component: {fileID: 443524250}
   - component: {fileID: 443524249}
   - component: {fileID: 443524251}
+  - component: {fileID: 443524252}
   - component: {fileID: 443524248}
   m_Layer: 0
   m_Name: PoolObjectManager
@@ -1877,6 +1878,24 @@ MonoBehaviour:
     type: 2}
   poolSize: 20
   timeToLive: 40
+  returnOnCollision: 0
+  returnOnTrigger: 0
+--- !u!114 &443524252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 443524247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb27390ff3cccff42beb414a45f89761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolName: DemonPool
+  objectPrefab: {fileID: 1528537103893704, guid: 321f800966e26634393454aa2faaa2f8,
+    type: 2}
+  poolSize: 10
+  timeToLive: 60
   returnOnCollision: 0
   returnOnTrigger: 0
 --- !u!4 &455056347 stripped
@@ -3829,7 +3848,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4473620457420474, guid: 59dda8608d0695147b7c43ae28725983, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1501809890790534, guid: 59dda8608d0695147b7c43ae28725983, type: 2}
       propertyPath: m_Layer
@@ -6773,21 +6792,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4473620457420474, guid: f5fdb7624d87d1e4ab7d1978a308e7aa, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 50026080437700962, guid: f5fdb7624d87d1e4ab7d1978a308e7aa,
-        type: 2}
-      propertyPath: m_Mass
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1709298000001892, guid: f5fdb7624d87d1e4ab7d1978a308e7aa, type: 2}
-      propertyPath: m_Layer
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 61276223941310754, guid: f5fdb7624d87d1e4ab7d1978a308e7aa,
         type: 2}
-      propertyPath: m_IsTrigger
-      value: 0
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f5fdb7624d87d1e4ab7d1978a308e7aa, type: 2}

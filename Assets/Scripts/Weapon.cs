@@ -5,7 +5,6 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     private Player player;
-    private bool attacking;
     private float attackPower;
     private BoxCollider2D col;
 
@@ -13,30 +12,23 @@ public class Weapon : MonoBehaviour {
 	void Start () {
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        attacking = player.IsAttacking();
         attackPower = 10f;
         col = GetComponent<BoxCollider2D>();
+        SetColliderActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        print("trigger");
+        Debug.Log("Trigger between " + gameObject.name + " and " + col.gameObject.name);
         if (col.tag == "Enemy")
         {
-            print("TRIGGER Weapon attacked " + col.name + " for " + attackPower + " damage.");
+            Debug.Log("TRIGGER Weapon attacked " + col.name + " for " + attackPower + " damage.");
             col.GetComponent<Health>().Damage(attackPower);
+            Vector2 force = (col.transform.position - transform.position).normalized;
+            print("applying force: " + force);
+            col.GetComponent<Rigidbody2D>().AddForce(force * attackPower, ForceMode2D.Impulse);
         }
     }
-
-    //private void OnCollisionEnter2D(Collision2D col)
-    //{
-    //    print("collision");
-    //    if (col.gameObject.tag == "Enemy")
-    //    {
-    //        print("COLLISION Enemy " + col.gameObject.name + " attacked player for " + attackPower + " damage.");
-    //        col.gameObject.GetComponent<Health>().Damage(attackPower);
-    //    }
-    //}
 
     public void SetColliderActive(bool x)
     {

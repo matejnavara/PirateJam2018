@@ -20,6 +20,7 @@ public class Portal : MonoBehaviour {
 
     private ObjectPool batPool;
     private ObjectPool skullPool;
+    private ObjectPool demonPool;
 
     // Use this for initialization
     void Start () {
@@ -28,6 +29,7 @@ public class Portal : MonoBehaviour {
         sr.sprite = portals[0];
         batPool = PoolObjectManager.Instance.GetPool("BatPool");
         skullPool = PoolObjectManager.Instance.GetPool("SkullPool");
+        demonPool = PoolObjectManager.Instance.GetPool("DemonPool");
 
         activated = false;
         charging = false;
@@ -43,7 +45,7 @@ public class Portal : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if(charging && charge <= 300)
+        if(charging && charge <= 400)
         {
             Charge();
         }
@@ -65,6 +67,7 @@ public class Portal : MonoBehaviour {
 //    }
 
     
+       
     private void OnTriggerEnter2D(Collider2D col)
     {
 
@@ -107,19 +110,19 @@ public class Portal : MonoBehaviour {
             activated = true;
         }
 
-        if (charge > 200 && charge < 299 && level != 2)
+        if (charge > 200 && charge < 399 && level != 2)
         {
             level = 2;
             sr.sprite = portals[2];
-            spawnTime = spawnBase * 2;
+            spawnTime = spawnBase * 3;
             timeToSpawn = spawnTime;
         }
 
-        if (charge >= 300 && level != 3)
+        if (charge >= 400 && level != 3)
         {
             level = 3;
             sr.sprite = portals[3];
-            spawnTime = spawnBase * 3;
+            spawnTime = spawnBase * 5;
             timeToSpawn = spawnTime;
         }
     }
@@ -146,8 +149,8 @@ public class Portal : MonoBehaviour {
 
             if (level == 3)
             {
-                print("Spawning Bat");
-                batPool.GetObject(transform.position);
+                print("Spawning Death");
+                demonPool.GetObject(transform.position);
                 timeToSpawn = spawnTime;
             }
 

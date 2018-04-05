@@ -6,15 +6,15 @@ using UnityEngine;
 	
 	private float baseSpeed;
     private float movespeed;
-    private Rigidbody2D rbd2;
     private bool alive;
     private Weapon weapon;
     private bool attacking;
 
     public Health health;
+    public Rigidbody2D rbd2;
 
 
-	void Start()
+    void Start()
 	{
         baseSpeed = 4f;
         rbd2 = GetComponent<Rigidbody2D> ();
