@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DemonEnemy : Enemy {
 
-    private Rigidbody2D rgdb;
+    private Rigidbody2D rdb2;
 
     public float smoothTime;
     public Vector3 smoothVelocity;
 
     void Start () {
-        rgdb = GetComponent<Rigidbody2D>();
+        rdb2 = GetComponent<Rigidbody2D>();
         moveRate = 3f;
         damageAmount = 6f;
 
@@ -24,12 +24,9 @@ public class DemonEnemy : Enemy {
 
         if(health.GetCurrentHealth() > 0)
         {
-            //transform.LookAt(player.transform);
-            float distance = Vector3.Distance(transform.position, player.transform.position);
-            if (distance < moveRate)
-            {
-                transform.position = Vector3.SmoothDamp(transform.position, player.transform.position, ref smoothVelocity, smoothTime);
-            }
+            Vector2 distance = new Vector2(player.transform.position.x - transform.position.x, player.transform.position.y - transform.position.y);
+            distance = distance.normalized;
+            rdb2.AddForce(distance / moveRate, ForceMode2D.Impulse);
         }
         else
         {

@@ -47,7 +47,7 @@ public class ObjectPool : MonoBehaviour {
     {
         Debug.Log("GetObject: " + poolIndex);
         // Take an object out of the pool just by decrementing the pool index.
-        Debug.Assert(poolIndex != 0, "Pool size exceeded");
+        Debug.Assert(poolIndex != 0, poolName + " size exceeded");
         var pooledObject = pool[poolIndex];
         poolIndex--;
         return ActivateObject( pooledObject , pos);

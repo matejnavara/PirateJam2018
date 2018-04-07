@@ -46,14 +46,14 @@ using UnityEngine;
     void Attack()
     {
 
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetButton("Fire1"))
         {
             attacking = true;
             weapon.SetColliderActive(true);
             weapon.transform.Rotate(0, 0, -20f);
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Fire1"))
         {
             attacking = false;
             weapon.SetColliderActive(false);

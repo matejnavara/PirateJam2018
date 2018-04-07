@@ -9,9 +9,7 @@ public class Portal : MonoBehaviour {
 
     private bool activated;
     private bool charging;
-    public float charge;
-    private float chargeRate;
-    private int level;
+    public int level;
 
     private float spawnTime;
     private float spawnBase;
@@ -22,6 +20,9 @@ public class Portal : MonoBehaviour {
     private ObjectPool skullPool;
     private ObjectPool demonPool;
 
+    private Baby baby;
+    private Progress chargeTimer;
+
     // Use this for initialization
     void Start () {
         portals = Resources.LoadAll<Sprite>("Sprites/portals");
@@ -30,22 +31,29 @@ public class Portal : MonoBehaviour {
         batPool = PoolObjectManager.Instance.GetPool("BatPool");
         skullPool = PoolObjectManager.Instance.GetPool("SkullPool");
         demonPool = PoolObjectManager.Instance.GetPool("DemonPool");
+        baby = GameObject.FindGameObjectWithTag("Baby").GetComponent<Baby>();
+        chargeTimer = baby.GetComponentInChildren<Progress>();
 
+        baby.ContactPortal(gameObject.name, true);
+    }
+
+    private void OnEnable()
+    {
         activated = false;
-        charging = false;
-        charge = 0;
-        chargeRate = 1f;
+        charging = true;
         level = 0;
 
-        spawnBase = 75f;
+        spawnBase = 130f;
         spawnTime = spawnBase;
         timeToSpawn = spawnTime;
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        baby.ContactPortal(gameObject.name, true);
+        sr.sprite = portals[level];
+    }
 
-        if(charging && charge <= 400)
+    // Update is called once per frame
+    void Update () {
+
+        if(charging)
         {
             Charge();
         }
@@ -74,7 +82,6 @@ public class Portal : MonoBehaviour {
         if (col.gameObject.tag == "Player" && activated)
         {
             timeToSpawn = spawnTime;
-            charge = 0;
             level = 0;
             activated = false;
             sr.sprite = portals[0];
@@ -83,6 +90,7 @@ public class Portal : MonoBehaviour {
         if (col.gameObject.tag == "Baby" && !charging)
         {
             charging = true;
+            baby.ContactPortal(gameObject.name, true);
         }
 
     }
@@ -92,38 +100,31 @@ public class Portal : MonoBehaviour {
         if (col.gameObject.tag == "Baby" && charging)
         {
             charging = false;
-            charge = level * 100;
+            chargeTimer.StopTimer();
+            baby.ContactPortal("", false);
         }
     }
 
     private void Charge()
     {
-
-        charge += chargeRate;      
-
-        if(charge > 100 && charge < 199 && level != 1)
+        
+        if(!chargeTimer.timerStarted && !chargeTimer.complete)
         {
-            level = 1;
-            sr.sprite = portals[1];
-            spawnTime = spawnBase;
-            timeToSpawn = spawnTime;
+            if (level == 0)
+            {
+                chargeTimer.StartTimer(2f);
+            } else if(level != 0 && level < 3)
+            {
+                chargeTimer.StartTimer(level * 4f);
+            }
+        }else if (chargeTimer.complete && level < 3)
+        {
+            level++;
+            sr.sprite = portals[level];
+            spawnTime = spawnBase * level;
+            timeToSpawn = spawnTime/2;
             activated = true;
-        }
-
-        if (charge > 200 && charge < 399 && level != 2)
-        {
-            level = 2;
-            sr.sprite = portals[2];
-            spawnTime = spawnBase * 3;
-            timeToSpawn = spawnTime;
-        }
-
-        if (charge >= 400 && level != 3)
-        {
-            level = 3;
-            sr.sprite = portals[3];
-            spawnTime = spawnBase * 5;
-            timeToSpawn = spawnTime;
+            chargeTimer.complete = false;
         }
     }
 
