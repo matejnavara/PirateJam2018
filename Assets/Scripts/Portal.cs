@@ -5,7 +5,7 @@ using UnityEngine;
 public class Portal : MonoBehaviour {
 
     private Sprite[] portals;
-    private SpriteRenderer sr;
+    private Animator anim;
 
     private bool activated;
     private bool charging;
@@ -27,7 +27,7 @@ public class Portal : MonoBehaviour {
     private void Start()
     {
         portals = Resources.LoadAll<Sprite>("Sprites/portals");
-        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         batPool = PoolObjectManager.Instance.GetPool("BatPool");
         skullPool = PoolObjectManager.Instance.GetPool("SkullPool");
         demonPool = PoolObjectManager.Instance.GetPool("DemonPool");
@@ -38,15 +38,15 @@ public class Portal : MonoBehaviour {
     void OnEnable()
     {
         NullCheck();
-        activated = false;
+        activated = true;
         charging = true;
-        level = 0;
+        level = 1;
 
         spawnBase = 130f;
         spawnTime = spawnBase;
         timeToSpawn = spawnTime;
         baby.ContactPortal(gameObject.name, true);
-        sr.sprite = portals[level];
+        anim.SetInteger("PortalLevel", level);
     }
 
     // Update is called once per frame
@@ -67,12 +67,12 @@ public class Portal : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject.tag == "Player" && activated)
+        if (col.gameObject.tag == "Player")
         {
             timeToSpawn = spawnTime;
-            level = 0;
             activated = false;
-            sr.sprite = portals[0];
+            baby.portalCount++;
+            GetComponent<PooledObject>().ReturnObject();
         }
 
         if (col.gameObject.tag == "Baby" && !charging)
@@ -95,25 +95,23 @@ public class Portal : MonoBehaviour {
 
     private void Charge()
     {
-        
-        if(!chargeTimer.timerStarted && !chargeTimer.complete)
+        if(level < 3)
         {
-            if (level == 0)
-            {
-                chargeTimer.StartTimer(1f);
-            } else if(level != 0 && level < 3)
+            if (!chargeTimer.timerStarted && !chargeTimer.complete)
             {
                 chargeTimer.StartTimer(level * 2f);
+
             }
-        }else if (chargeTimer.complete && level < 3)
-        {
-            level++;
-            sr.sprite = portals[level];
-            spawnTime = spawnBase * level;
-            timeToSpawn = spawnTime/2;
-            activated = true;
-            chargeTimer.complete = false;
-        }
+            else if (chargeTimer.complete)
+            {
+                level++;
+                anim.SetInteger("PortalLevel", level);
+                spawnTime = spawnBase * level;
+                timeToSpawn = spawnTime / 2;
+                activated = true;
+                chargeTimer.complete = false;
+            }
+        }       
     }
 
     private void Spawn()
@@ -150,7 +148,6 @@ public class Portal : MonoBehaviour {
     private void NullCheck()
     {
         if(portals == null){ portals = Resources.LoadAll<Sprite>("Sprites/portals"); }       
-        if(sr == null) { sr = GetComponent<SpriteRenderer>(); }
         //if(batPool == null) { batPool = PoolObjectManager.Instance.GetPool("BatPool"); }
         //if(skullPool == null) { skullPool = PoolObjectManager.Instance.GetPool("SkullPool"); }
         //if (demonPool == null) { demonPool = PoolObjectManager.Instance.GetPool("DemonPool"); }

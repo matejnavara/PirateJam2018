@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212698145959519574}
   - component: {fileID: 61729833799927836}
   - component: {fileID: 114630235548765344}
+  - component: {fileID: 95948008356889054}
   m_Layer: 0
   m_Name: portal
   m_TagString: Untagged
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841661110087364}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.3748024, y: -1.16, z: 0}
+  m_LocalPosition: {x: -2.1361046, y: 0.059598565, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,19 +55,36 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.38}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.65, y: 0.76}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 0.66, y: 1.2}
     newSize: {x: 0.65, y: 0.76}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.49, y: 0.52}
+  m_Size: {x: 0.58, y: 0.52}
   m_EdgeRadius: 0
+--- !u!95 &95948008356889054
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841661110087364}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5be73261d4b211644937535c14f0689d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114630235548765344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -78,8 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8293304ad0db3e54d800e3f91b5c0911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 0
   timeToSpawn: 0
-  bat: {fileID: 1497047020538126, guid: ab0dfd2b54840e24584dfc8f18f95489, type: 2}
+  baby: {fileID: 0}
 --- !u!212 &212698145959519574
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -114,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 20
-  m_Sprite: {fileID: 21300000, guid: 7a2108d7d54d46c49af99e4b99b57345, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 7a2108d7d54d46c49af99e4b99b57345, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

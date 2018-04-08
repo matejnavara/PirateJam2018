@@ -159,7 +159,7 @@ using Rewired;
                     Debug.Log("KICKING " + hit.name + " with " + force);
                 }
             }
-            specialTimer.StartTimer(5f);
+            specialTimer.StartTimer(3f);
         } else
         {
             //still charging notification

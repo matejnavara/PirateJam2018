@@ -18,7 +18,6 @@ public class DemonEnemy : Enemy {
         anim = GetComponent<Animator>();
         moveRate = 3f;
         damageAmount = 6f;
-
         smoothTime = 1.3f;
         smoothVelocity = Vector3.zero;
         dying = false;
@@ -46,8 +45,7 @@ public class DemonEnemy : Enemy {
             print(gameObject.name + " DIED");
             anim.SetBool("alive", false);
             dying = true;
-        }
-        
+        }       
 	}
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -58,7 +56,7 @@ public class DemonEnemy : Enemy {
             Debug.Log("Enemy " + gameObject.name + " attacked player for " + damageAmount + " damage.");
             anim.SetTrigger("onAttack");
             Vector2 force = (col.transform.position - transform.position).normalized;
-            player.Hit(damageAmount, force);
+            player.Hit(damageAmount, force * 5f);
         }
     }
 }
