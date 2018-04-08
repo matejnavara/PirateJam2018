@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50431231503348538}
   - component: {fileID: 114001435084072130}
   - component: {fileID: 114607052335196142}
+  - component: {fileID: 95929112192871728}
   m_Layer: 0
   m_Name: Demon
   m_TagString: Enemy
@@ -55,7 +56,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 15
+  m_Mass: 7
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -89,6 +90,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45, y: 0.74}
   m_EdgeRadius: 0
+--- !u!95 &95929112192871728
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1528537103893704}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 989902b6d88dc2240bb0d9dd7ec0f84c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114001435084072130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,6 +135,7 @@ MonoBehaviour:
   moveRate: 10
   health: {fileID: 0}
   player: {fileID: 0}
+  rgdb: {fileID: 0}
   smoothTime: 0
   smoothVelocity: {x: 0, y: 0, z: 0}
 --- !u!212 &212100361460416618

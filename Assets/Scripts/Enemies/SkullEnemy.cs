@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class SkullEnemy : Enemy {
 
-    private Rigidbody2D rgdb;
-
     public float smoothTime;
     public Vector3 smoothVelocity;
+    private Animator anim;
+    private bool dying;
 
     void Start () {
-        rgdb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         moveRate = 20f;
         damageAmount = 3f;
-
+        dying = false;
         smoothTime = 2.0f;
         smoothVelocity = Vector3.zero;
     }
 
-    
+    private void OnEnable()
+    {
+        dying = false;
+        health.Respawn();
+    }
 
-    void FixedUpdate () {
+    void FixedUpdate ()
+    {
 
         if(health.GetCurrentHealth() > 0)
         {
@@ -31,13 +36,21 @@ public class SkullEnemy : Enemy {
                 transform.position = Vector3.SmoothDamp(transform.position, player.transform.position, ref smoothVelocity, smoothTime);
             }
         }
-        else
+        else if(!dying)
         {
             print(gameObject.name + " DIED");
-            gameObject.GetComponent<PooledObject>().ReturnObject();
+            anim.SetTrigger("onDeath");
+            dying = true;
         }
         
 	}
+
+    override public void Hit(float amount, Vector2 direction)
+    {
+        anim.SetTrigger("onHit");
+        health.Damage(amount);
+        rgdb.AddForce(direction * amount, ForceMode2D.Impulse);        
+    }
 
     private void OnCollisionEnter2D(Collision2D col)
     {
@@ -47,4 +60,5 @@ public class SkullEnemy : Enemy {
             player.health.Damage(damageAmount);
         }
     }
+
 }

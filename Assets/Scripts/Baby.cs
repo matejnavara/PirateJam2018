@@ -1,15 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Rewired;
 
  public class Baby : MonoBehaviour{
- // Normal Movements Variables
+    // Normal Movements Variables
+    private int playerId = 1;
+    private Rewired.Player player;
 
     private float baseSpeed;
     private float moveSpeed;
-    private bool alive;
     public int portalCount;
 
+    private bool isAlive;
+    private bool isHit;
+    private float hitDuration;
+    private float hitDurationMax;
 
     public Health health;
     public bool beingExorcised;
@@ -24,11 +30,14 @@ using UnityEngine;
 
     void Start()
     {
-        baseSpeed = 5f;
-        moveSpeed = baseSpeed;
-        alive = true;
-        portalCount = 4;
+        player = ReInput.players.GetPlayer(playerId);
 
+        baseSpeed = 3f;
+        moveSpeed = baseSpeed;
+        isAlive = true;
+        isHit = false;
+        portalCount = 4;
+        hitDurationMax = 20f;
 
         health = GetComponent<Health>();
         rbd2 = GetComponent<Rigidbody2D>();
@@ -52,6 +61,7 @@ using UnityEngine;
         }
         else
         {
+            isAlive = false;
             print("Dead");
         }
 
@@ -69,20 +79,36 @@ using UnityEngine;
             moveSpeed = baseSpeed;
         }
 
-        rbd2.velocity = new Vector2(Mathf.Lerp(0, Input.GetAxis("Horizontal2") * moveSpeed, 0.8f),
-                                        Mathf.Lerp(0, Input.GetAxis("Vertical2") * moveSpeed, 0.8f));
+        if (!isHit)
+        {
+            rbd2.velocity = new Vector2(Mathf.Lerp(0, player.GetAxis("MoveHorizontal") * moveSpeed, 0.8f),
+                                        Mathf.Lerp(0, player.GetAxis("MoveVertical") * moveSpeed, 0.8f));
+        }
+        else
+        {
+            rbd2.AddForce(new Vector2(player.GetAxis("MoveHorizontal") * moveSpeed, player.GetAxis("MoveVertical") * moveSpeed));
+            hitDuration -= 1f;
+            if(hitDuration < 0) { isHit = false; }
+        }
+    }
+
+    public void Hit(Vector2 force)
+    {
+        isHit = true;
+        GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+        hitDuration = hitDurationMax;
     }
 
     void Summon()
     {
 
-        if (Input.GetButton("Fire2a") && !onPortal && portalCount > 0)
+        if (player.GetButton("Fire1") && !onPortal && portalCount > 0)
         {
             portalPool.GetObject(transform.position);
             portalCount--;
         }
 
-        if (Input.GetButton("Fire2b") && onPortal)
+        if (player.GetButton("Fire2") && onPortal)
         {
             portalPool.ReturnObject(GameObject.Find(contactPortal).GetComponent<PooledObject>());
             portalCount++;
@@ -100,8 +126,8 @@ using UnityEngine;
     {
         if (beingExorcised)
         {
-            moveSpeed = baseSpeed / 2;
-            health.Damage(1f);
+            moveSpeed = baseSpeed / 1.5f;
+            health.Damage(0.75f);
             print("IT BURNS!");
         } else
         {
@@ -112,6 +138,11 @@ using UnityEngine;
     public void Exorcism(bool foo)
     {
         beingExorcised = foo;
+    }
+
+    public bool IsAlive()
+    {
+        return isAlive;
     }
 
 }

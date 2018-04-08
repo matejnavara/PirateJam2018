@@ -23,11 +23,10 @@ public class Weapon : MonoBehaviour {
         if (col.tag == "Enemy")
         {
             Debug.Log("TRIGGER Weapon attacked " + col.name + " for " + attackPower + " damage.");
-            col.GetComponent<Health>().Damage(attackPower);
             Vector2 force = (col.transform.position - transform.position).normalized;
-            print("applying force: " + force);
-            col.GetComponent<Rigidbody2D>().AddForce(force * attackPower, ForceMode2D.Impulse);
+            col.GetComponent<Enemy>().Hit(attackPower, force);
         }
+
     }
 
     public void SetColliderActive(bool x)

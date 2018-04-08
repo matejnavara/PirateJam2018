@@ -10,7 +10,7 @@ public class Health : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         currentHealth = maxHealth;
-}
+    }
 	
     public float GetMaxHealth()
     {
@@ -47,6 +47,11 @@ public class Health : MonoBehaviour {
     public void Respawn()
     {
         currentHealth = maxHealth;
+    }
+
+    public void Die()
+    {
+        gameObject.GetComponent<PooledObject>().ReturnObject();
     }
 
 }

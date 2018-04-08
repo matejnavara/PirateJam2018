@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BatEnemy : Enemy {
 
-    private Rigidbody2D rgdb;
+    private Animator anim;
 
-	void Start () {
-        rgdb = GetComponent<Rigidbody2D>();
+    void Start () {
+        anim = GetComponent<Animator>();
         moveRate = 20f;
         damageAmount = 10f;
 	}
@@ -23,10 +23,16 @@ public class BatEnemy : Enemy {
         else
         {
             print(gameObject.name + " DIED");
-            gameObject.GetComponent<PooledObject>().ReturnObject();
+            anim.SetTrigger("onDeath");
         }
         
 	}
+
+    override public void Hit(float amount, Vector2 direction)
+    {
+        health.Damage(amount);
+        rgdb.AddForce(direction * (amount/2), ForceMode2D.Impulse);
+    }
 
     private void OnTriggerEnter2D(Collider2D col)
     {

@@ -20,25 +20,24 @@ public class Portal : MonoBehaviour {
     private ObjectPool skullPool;
     private ObjectPool demonPool;
 
-    private Baby baby;
+    public Baby baby;
     private Progress chargeTimer;
 
     // Use this for initialization
-    void Start () {
+    private void Start()
+    {
         portals = Resources.LoadAll<Sprite>("Sprites/portals");
         sr = GetComponent<SpriteRenderer>();
-        sr.sprite = portals[0];
         batPool = PoolObjectManager.Instance.GetPool("BatPool");
         skullPool = PoolObjectManager.Instance.GetPool("SkullPool");
         demonPool = PoolObjectManager.Instance.GetPool("DemonPool");
         baby = GameObject.FindGameObjectWithTag("Baby").GetComponent<Baby>();
         chargeTimer = baby.GetComponentInChildren<Progress>();
-
-        baby.ContactPortal(gameObject.name, true);
     }
 
-    private void OnEnable()
+    void OnEnable()
     {
+        NullCheck();
         activated = false;
         charging = true;
         level = 0;
@@ -63,17 +62,6 @@ public class Portal : MonoBehaviour {
             Spawn();
         }
     }
-
-    //private void OnTriggerStay2D(Collider2D col)
-    //{
-    //    print("Detecting collision stay");
-    //    if (col.gameObject.tag == "Baby" && charge <= 300)
-    //    {
-    //        Charge();
-    //        print("Inside loop");
-//        }
-//    }
-
     
        
     private void OnTriggerEnter2D(Collider2D col)
@@ -112,10 +100,10 @@ public class Portal : MonoBehaviour {
         {
             if (level == 0)
             {
-                chargeTimer.StartTimer(2f);
+                chargeTimer.StartTimer(1f);
             } else if(level != 0 && level < 3)
             {
-                chargeTimer.StartTimer(level * 4f);
+                chargeTimer.StartTimer(level * 2f);
             }
         }else if (chargeTimer.complete && level < 3)
         {
@@ -157,5 +145,17 @@ public class Portal : MonoBehaviour {
 
 
         }
+    }
+
+    private void NullCheck()
+    {
+        if(portals == null){ portals = Resources.LoadAll<Sprite>("Sprites/portals"); }       
+        if(sr == null) { sr = GetComponent<SpriteRenderer>(); }
+        //if(batPool == null) { batPool = PoolObjectManager.Instance.GetPool("BatPool"); }
+        //if(skullPool == null) { skullPool = PoolObjectManager.Instance.GetPool("SkullPool"); }
+        //if (demonPool == null) { demonPool = PoolObjectManager.Instance.GetPool("DemonPool"); }
+        if(baby == null) { baby = GameObject.FindGameObjectWithTag("Baby").GetComponent<Baby>(); }
+        if(chargeTimer == null) { chargeTimer = baby.GetComponentInChildren<Progress>(); }
+        
     }
 }

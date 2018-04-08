@@ -4,6 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/Rewired/
+RewiredBackup/
 
 # Visual Studio cache directory
 /.vs/
@@ -33,3 +35,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+

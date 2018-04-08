@@ -10,14 +10,20 @@ public abstract class Enemy : MonoBehaviour
 
     public Health health;
     public Player player;
-    //public Animator anim;
+    public Rigidbody2D rgdb;
 
 
     public void Awake()
     {
         health = GetComponent<Health>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        //anim = GetComponent<Animator>();
+        rgdb = GetComponent<Rigidbody2D>();
+    }
+
+    virtual public void Hit(float amount, Vector2 direction)
+    {
+        health.Damage(amount);
+        rgdb.AddForce(direction * amount, ForceMode2D.Impulse);
     }
 
     private void OnEnable()
