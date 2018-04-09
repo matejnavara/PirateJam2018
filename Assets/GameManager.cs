@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
     public GameObject pauseButton;
     public GameObject playerWinPanel;
     public GameObject babyWinPanel;
+    public GameObject playagainButton;
+    public GameObject mainmenuButton;
 
     //Game Logic Elements
     public bool countDown;
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour {
     void Awake()
     {
         GetThisGameManager();
+        Reset();
         soundCheck();
     }
 
@@ -60,9 +63,6 @@ public class GameManager : MonoBehaviour {
     void Start()
     {
         Reset();
-        print("START again");
-        print("Level name: " + level.getName());
-        print("Level index: " + index);
     }
 
     void Update()
@@ -95,8 +95,8 @@ public class GameManager : MonoBehaviour {
     //Sound methods
     void soundCheck()
     {
-        string m = PlayerPrefs.GetString("Music");
-        string s = PlayerPrefs.GetString("Sfx");
+        string m = PlayerPrefs.GetString("music");
+        string s = PlayerPrefs.GetString("sfx");
 
         if (m == null || m == "on") { music = true; } else { music = false; }
         if (s == null || s == "on") { sfx = true; } else { sfx = false; }
@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour {
         gameOver = true;
         paused = true;
         playerWinPanel.SetActive(true);
-        ActivateButtons();
+        ActivateButtons(true);
 
     }
 
@@ -131,12 +131,15 @@ public class GameManager : MonoBehaviour {
         gameOver = true;
         paused = true;
         babyWinPanel.SetActive(true);
-        ActivateButtons();
+        ActivateButtons(true);
         
     }
 
-    void ActivateButtons()
+    void ActivateButtons(bool foo)
     {
+        playagainButton.SetActive(foo);
+        mainmenuButton.SetActive(foo);
+        playagainButton.GetComponent<Button>().Select();
         //playagainButton.onClick.AddListener(delegate { Reset(); });
         //mainmenuButton.onClick.AddListener(delegate { MainMenu(); });
     }
@@ -153,16 +156,25 @@ public class GameManager : MonoBehaviour {
         level = GameObject.Find("Level").GetComponent<Level>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         baby = GameObject.FindGameObjectWithTag("Baby").GetComponent<Baby>();
-        countDown = false;
         gameOver = false;
         paused = false;
         index = level.getIndex();
         playerWinPanel.SetActive(false);
         babyWinPanel.SetActive(false);
-
+        ActivateButtons(false);
         //audioBG = gameObject.GetComponent<AudioSource>();
         //soundBG = (AudioClip)Instantiate(Resources.Load(level.getMusic()));   
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+        print("START again");
+        print("Level name: " + level.getName());
+        print("Level index: " + index);
+    }
+
+    public void PlayAgain()
+    {
+        int level = (int)Random.Range(1, 1);
+        Debug.Log("Loading level " + level);
+        SceneManager.LoadScene(level);
     }
 
     //Returns to main menu upon pressing main menu

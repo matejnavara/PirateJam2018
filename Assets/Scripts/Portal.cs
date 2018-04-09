@@ -31,7 +31,6 @@ public class Portal : MonoBehaviour {
         batPool = PoolObjectManager.Instance.GetPool("BatPool");
         skullPool = PoolObjectManager.Instance.GetPool("SkullPool");
         demonPool = PoolObjectManager.Instance.GetPool("DemonPool");
-        baby = GameObject.FindGameObjectWithTag("Baby").GetComponent<Baby>();
         chargeTimer = baby.GetComponentInChildren<Progress>();
     }
 
@@ -45,7 +44,11 @@ public class Portal : MonoBehaviour {
         spawnBase = 130f;
         spawnTime = spawnBase;
         timeToSpawn = spawnTime;
+
+        baby = GameObject.FindGameObjectWithTag("Baby").GetComponent<Baby>();
         baby.ContactPortal(gameObject.name, true);
+
+        anim = GetComponent<Animator>();
         anim.SetInteger("PortalLevel", level);
     }
 

@@ -39,7 +39,7 @@ public class BatEnemy : Enemy {
         if (col.gameObject.tag == "Player")
         {
             print("Enemy " + gameObject.name + " attacked player for " + damageAmount + " damage.");
-            player.health.Damage(damageAmount);
+            player.Hit(damageAmount, Vector2.zero);
         }
     }
 }

@@ -1,75 +1,75 @@
 fileFormatVersion: 2
-guid: 4947ea121c38dcc43b7f22fc83bd8bec
-timeCreated: 1523217752
+guid: e8866a4b4a94a1e469275a3d9d5c400c
+timeCreated: 1523248936
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: portal-sprites 1_0
-    21300002: portal-sprites 1_1
-    21300004: portal-sprites 1_2
-    21300006: portal-sprites 1_3
-    21300008: portal-sprites 1_4
-    21300010: portal-sprites 1_5
-    21300012: portal-sprites 1_6
-    21300014: portal-sprites 1_7
-    21300016: portal-sprites 1_8
-    21300018: portal-sprites 1_9
-    21300020: portal-sprites 1_10
-    21300022: portal-sprites 1_11
-    21300024: portal-sprites 1_12
-    21300026: portal-sprites 1_13
-    21300028: portal-sprites 1_14
-    21300030: portal-sprites 1_15
-    21300032: portal-sprites 1_16
-    21300034: portal-sprites 1_17
-    21300036: portal-sprites 1_18
-    21300038: portal-sprites 1_19
-    21300040: portal-sprites 1_20
-    21300042: portal-sprites 1_21
-    21300044: portal-sprites 1_22
-    21300046: portal-sprites 1_23
-    21300048: portal-sprites 1_24
-    21300050: portal-sprites 1_25
-    21300052: portal-sprites 1_26
-    21300054: portal-sprites 1_27
-    21300056: portal-sprites 1_28
-    21300058: portal-sprites 1_29
-    21300060: portal-sprites 1_30
-    21300062: portal-sprites 1_31
-    21300064: portal-sprites 1_32
-    21300066: portal-sprites 1_33
-    21300068: portal-sprites 1_34
-    21300070: portal-sprites 1_35
-    21300072: portal-sprites 1_36
-    21300074: portal-sprites 1_37
-    21300076: portal-sprites 1_38
-    21300078: portal-sprites 1_39
-    21300080: portal-sprites 1_40
-    21300082: portal-sprites 1_41
-    21300084: portal-sprites 1_42
-    21300086: portal-sprites 1_43
-    21300088: portal-sprites 1_44
-    21300090: portal-sprites 1_45
-    21300092: portal-sprites 1_46
-    21300094: portal-sprites 1_47
-    21300096: portal-sprites 1_48
-    21300098: portal-sprites 1_49
-    21300100: portal-sprites 1_50
-    21300102: portal-sprites 1_51
-    21300104: portal-sprites 1_52
-    21300106: portal-sprites 1_53
-    21300108: portal-sprites 1_54
-    21300110: portal-sprites 1_55
-    21300112: portal-sprites 1_56
-    21300114: portal-sprites 1_57
-    21300116: portal-sprites 1_58
-    21300118: portal-sprites 1_59
-    21300120: portal-sprites 1_60
-    21300122: portal-sprites 1_61
-    21300124: portal-sprites 1_62
-    21300126: portal-sprites 1_63
-    21300128: portal-sprites 1_64
-    21300130: portal-sprites 1_65
+    21300000: portal-sprites_0
+    21300002: portal-sprites_1
+    21300004: portal-sprites_2
+    21300006: portal-sprites_3
+    21300008: portal-sprites_4
+    21300010: portal-sprites_5
+    21300012: portal-sprites_6
+    21300014: portal-sprites_7
+    21300016: portal-sprites_8
+    21300018: portal-sprites_9
+    21300020: portal-sprites_10
+    21300022: portal-sprites_11
+    21300024: portal-sprites_12
+    21300026: portal-sprites_13
+    21300028: portal-sprites_14
+    21300030: portal-sprites_15
+    21300032: portal-sprites_16
+    21300034: portal-sprites_17
+    21300036: portal-sprites_18
+    21300038: portal-sprites_19
+    21300040: portal-sprites_20
+    21300042: portal-sprites_21
+    21300044: portal-sprites_22
+    21300046: portal-sprites_23
+    21300048: portal-sprites_24
+    21300050: portal-sprites_25
+    21300052: portal-sprites_26
+    21300054: portal-sprites_27
+    21300056: portal-sprites_28
+    21300058: portal-sprites_29
+    21300060: portal-sprites_30
+    21300062: portal-sprites_31
+    21300064: portal-sprites_32
+    21300066: portal-sprites_33
+    21300068: portal-sprites_34
+    21300070: portal-sprites_35
+    21300072: portal-sprites_36
+    21300074: portal-sprites_37
+    21300076: portal-sprites_38
+    21300078: portal-sprites_39
+    21300080: portal-sprites_40
+    21300082: portal-sprites_41
+    21300084: portal-sprites_42
+    21300086: portal-sprites_43
+    21300088: portal-sprites_44
+    21300090: portal-sprites_45
+    21300092: portal-sprites_46
+    21300094: portal-sprites_47
+    21300096: portal-sprites_48
+    21300098: portal-sprites_49
+    21300100: portal-sprites_50
+    21300102: portal-sprites_51
+    21300104: portal-sprites_52
+    21300106: portal-sprites_53
+    21300108: portal-sprites_54
+    21300110: portal-sprites_55
+    21300112: portal-sprites_56
+    21300114: portal-sprites_57
+    21300116: portal-sprites_58
+    21300118: portal-sprites_59
+    21300120: portal-sprites_60
+    21300122: portal-sprites_61
+    21300124: portal-sprites_62
+    21300126: portal-sprites_63
+    21300128: portal-sprites_64
+    21300130: portal-sprites_65
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -167,77 +167,77 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: portal-sprites 1_0
+      name: portal-sprites_0
       rect:
         serializedVersion: 2
         x: 160
         y: 180
         width: 32
         height: 80
-      alignment: 9
-      pivot: {x: 0.5, y: 0.015104294}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_1
+      name: portal-sprites_1
       rect:
         serializedVersion: 2
         x: 197
         y: 180
         width: 29
         height: 86
-      alignment: 9
-      pivot: {x: 0.49999946, y: 0.0059754127}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_2
+      name: portal-sprites_2
       rect:
         serializedVersion: 2
         x: 230
         y: 180
         width: 26
         height: 86
-      alignment: 9
-      pivot: {x: 0.5, y: 0.013135156}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_3
+      name: portal-sprites_3
       rect:
         serializedVersion: 2
         x: 261
         y: 180
         width: 30
         height: 80
-      alignment: 9
-      pivot: {x: 0.47947592, y: -0.00028934478}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_4
+      name: portal-sprites_4
       rect:
         serializedVersion: 2
         x: 329
-        y: 180
-        width: 51
-        height: 78
-      alignment: 9
-      pivot: {x: 0.48859715, y: -0.0052232007}
+        y: 159
+        width: 54
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_5
+      name: portal-sprites_5
       rect:
         serializedVersion: 2
         x: 354
@@ -245,13 +245,13 @@ TextureImporter:
         width: 12
         height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_6
+      name: portal-sprites_6
       rect:
         serializedVersion: 2
         x: 364
@@ -259,27 +259,27 @@ TextureImporter:
         width: 8
         height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_7
+      name: portal-sprites_7
       rect:
         serializedVersion: 2
         x: 382
         y: 180
         width: 45
         height: 79
-      alignment: 9
-      pivot: {x: 0.5, y: 0.01676033}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_8
+      name: portal-sprites_8
       rect:
         serializedVersion: 2
         x: 386
@@ -287,13 +287,13 @@ TextureImporter:
         width: 8
         height: 12
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_9
+      name: portal-sprites_9
       rect:
         serializedVersion: 2
         x: 395
@@ -301,13 +301,13 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_10
+      name: portal-sprites_10
       rect:
         serializedVersion: 2
         x: 411
@@ -315,41 +315,41 @@ TextureImporter:
         width: 7
         height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_11
+      name: portal-sprites_11
       rect:
         serializedVersion: 2
         x: 432
         y: 180
         width: 44
         height: 78
-      alignment: 9
-      pivot: {x: 0.4860056, y: -0.0052232007}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_12
+      name: portal-sprites_12
       rect:
         serializedVersion: 2
         x: 482
         y: 180
         width: 46
         height: 80
-      alignment: 9
-      pivot: {x: 0.47322813, y: 0.0074073793}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_13
+      name: portal-sprites_13
       rect:
         serializedVersion: 2
         x: 559
@@ -357,13 +357,13 @@ TextureImporter:
         width: 50
         height: 94
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_14
+      name: portal-sprites_14
       rect:
         serializedVersion: 2
         x: 573
@@ -371,13 +371,13 @@ TextureImporter:
         width: 4
         height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_15
+      name: portal-sprites_15
       rect:
         serializedVersion: 2
         x: 586
@@ -385,13 +385,13 @@ TextureImporter:
         width: 12
         height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_16
+      name: portal-sprites_16
       rect:
         serializedVersion: 2
         x: 596
@@ -399,69 +399,125 @@ TextureImporter:
         width: 8
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_17
+      name: portal-sprites_17
       rect:
         serializedVersion: 2
         x: 44
         y: 180
         width: 16
         height: 31
-      alignment: 9
-      pivot: {x: 0.46151614, y: 0.0034347042}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_18
+      name: portal-sprites_18
       rect:
         serializedVersion: 2
-        x: 64
-        y: 180
-        width: 21
-        height: 40
-      alignment: 9
-      pivot: {x: 0.5293212, y: 0.0074073793}
+        x: 46
+        y: 159
+        width: 39
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_19
+      name: portal-sprites_19
       rect:
         serializedVersion: 2
         x: 90
         y: 180
         width: 28
         height: 48
-      alignment: 9
-      pivot: {x: 0.49999973, y: -0.00028928122}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_20
+      name: portal-sprites_20
       rect:
         serializedVersion: 2
         x: 123
         y: 180
         width: 32
         height: 64
-      alignment: 9
-      pivot: {x: 0.49999952, y: -0.00028944016}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_25
+      name: portal-sprites_21
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 157
+        width: 19
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: portal-sprites_22
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 159
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: portal-sprites_23
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 159
+        width: 19
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: portal-sprites_24
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 159
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: portal-sprites_25
       rect:
         serializedVersion: 2
         x: 516
@@ -469,13 +525,13 @@ TextureImporter:
         width: 12
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_26
+      name: portal-sprites_26
       rect:
         serializedVersion: 2
         x: 15
@@ -483,13 +539,13 @@ TextureImporter:
         width: 22
         height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_27
+      name: portal-sprites_27
       rect:
         serializedVersion: 2
         x: 41
@@ -497,13 +553,13 @@ TextureImporter:
         width: 21
         height: 28
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_28
+      name: portal-sprites_28
       rect:
         serializedVersion: 2
         x: 94
@@ -511,13 +567,13 @@ TextureImporter:
         width: 23
         height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_29
+      name: portal-sprites_29
       rect:
         serializedVersion: 2
         x: 139
@@ -525,13 +581,13 @@ TextureImporter:
         width: 24
         height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_30
+      name: portal-sprites_30
       rect:
         serializedVersion: 2
         x: 167
@@ -539,13 +595,13 @@ TextureImporter:
         width: 23
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_31
+      name: portal-sprites_31
       rect:
         serializedVersion: 2
         x: 194
@@ -553,13 +609,13 @@ TextureImporter:
         width: 23
         height: 23
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_32
+      name: portal-sprites_32
       rect:
         serializedVersion: 2
         x: 221
@@ -567,13 +623,13 @@ TextureImporter:
         width: 16
         height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_33
+      name: portal-sprites_33
       rect:
         serializedVersion: 2
         x: 241
@@ -581,13 +637,13 @@ TextureImporter:
         width: 14
         height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_34
+      name: portal-sprites_34
       rect:
         serializedVersion: 2
         x: 300
@@ -595,13 +651,13 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_35
+      name: portal-sprites_35
       rect:
         serializedVersion: 2
         x: 320
@@ -609,13 +665,13 @@ TextureImporter:
         width: 15
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_36
+      name: portal-sprites_36
       rect:
         serializedVersion: 2
         x: 339
@@ -623,13 +679,13 @@ TextureImporter:
         width: 16
         height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_37
+      name: portal-sprites_37
       rect:
         serializedVersion: 2
         x: 368
@@ -637,13 +693,13 @@ TextureImporter:
         width: 15
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_38
+      name: portal-sprites_38
       rect:
         serializedVersion: 2
         x: 389
@@ -651,41 +707,41 @@ TextureImporter:
         width: 12
         height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_39
+      name: portal-sprites_39
       rect:
         serializedVersion: 2
-        x: 443
-        y: 105
-        width: 67
-        height: 30
+        x: 427
+        y: 74
+        width: 83
+        height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_40
+      name: portal-sprites_40
       rect:
         serializedVersion: 2
         x: 508
-        y: 105
+        y: 26
         width: 71
-        height: 30
+        height: 109
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_41
+      name: portal-sprites_41
       rect:
         serializedVersion: 2
         x: 584
@@ -693,13 +749,13 @@ TextureImporter:
         width: 64
         height: 29
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_42
+      name: portal-sprites_42
       rect:
         serializedVersion: 2
         x: 66
@@ -707,13 +763,13 @@ TextureImporter:
         width: 37
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_43
+      name: portal-sprites_43
       rect:
         serializedVersion: 2
         x: 199
@@ -721,13 +777,13 @@ TextureImporter:
         width: 15
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_44
+      name: portal-sprites_44
       rect:
         serializedVersion: 2
         x: 222
@@ -735,13 +791,13 @@ TextureImporter:
         width: 14
         height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_45
+      name: portal-sprites_45
       rect:
         serializedVersion: 2
         x: 248
@@ -749,13 +805,13 @@ TextureImporter:
         width: 5
         height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_46
+      name: portal-sprites_46
       rect:
         serializedVersion: 2
         x: 367
@@ -763,13 +819,13 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_47
+      name: portal-sprites_47
       rect:
         serializedVersion: 2
         x: 387
@@ -777,13 +833,13 @@ TextureImporter:
         width: 16
         height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_48
+      name: portal-sprites_48
       rect:
         serializedVersion: 2
         x: 407
@@ -791,69 +847,69 @@ TextureImporter:
         width: 16
         height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_49
+      name: portal-sprites_49
       rect:
         serializedVersion: 2
         x: 124
         y: 4
         width: 22
-        height: 50
+        height: 71
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_50
+      name: portal-sprites_50
       rect:
         serializedVersion: 2
         x: 184
         y: 4
         width: 32
-        height: 60
+        height: 74
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_51
+      name: portal-sprites_51
       rect:
         serializedVersion: 2
         x: 237
         y: 4
         width: 38
         height: 62
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_52
+      name: portal-sprites_52
       rect:
         serializedVersion: 2
-        x: 324
+        x: 264
         y: 4
-        width: 39
-        height: 63
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        width: 99
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_53
+      name: portal-sprites_53
       rect:
         serializedVersion: 2
         x: 293
@@ -861,13 +917,13 @@ TextureImporter:
         width: 5
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_54
+      name: portal-sprites_54
       rect:
         serializedVersion: 2
         x: 299
@@ -875,13 +931,27 @@ TextureImporter:
         width: 5
         height: 4
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_56
+      name: portal-sprites_55
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 63
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: portal-sprites_56
       rect:
         serializedVersion: 2
         x: 51
@@ -889,13 +959,13 @@ TextureImporter:
         width: 16
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_57
+      name: portal-sprites_57
       rect:
         serializedVersion: 2
         x: 72
@@ -903,13 +973,13 @@ TextureImporter:
         width: 20
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_58
+      name: portal-sprites_58
       rect:
         serializedVersion: 2
         x: 97
@@ -917,13 +987,13 @@ TextureImporter:
         width: 22
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_59
+      name: portal-sprites_59
       rect:
         serializedVersion: 2
         x: 151
@@ -931,27 +1001,27 @@ TextureImporter:
         width: 28
         height: 56
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_60
+      name: portal-sprites_60
       rect:
         serializedVersion: 2
         x: 280
         y: 4
         width: 40
         height: 57
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_61
+      name: portal-sprites_61
       rect:
         serializedVersion: 2
         x: 383
@@ -959,13 +1029,13 @@ TextureImporter:
         width: 11
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_62
+      name: portal-sprites_62
       rect:
         serializedVersion: 2
         x: 398
@@ -973,13 +1043,13 @@ TextureImporter:
         width: 12
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_63
+      name: portal-sprites_63
       rect:
         serializedVersion: 2
         x: 414
@@ -987,13 +1057,13 @@ TextureImporter:
         width: 12
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_64
+      name: portal-sprites_64
       rect:
         serializedVersion: 2
         x: 438
@@ -1001,13 +1071,13 @@ TextureImporter:
         width: 12
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: portal-sprites 1_65
+      name: portal-sprites_65
       rect:
         serializedVersion: 2
         x: 454
@@ -1015,7 +1085,7 @@ TextureImporter:
         width: 36
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

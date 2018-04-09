@@ -13,18 +13,24 @@ public class DemonEnemy : Enemy {
     private bool dying;
 
 
-    void Start () {
+    //void start () {
+    //    rdb2 = getcomponent<rigidbody2d>();
+    //    anim = getcomponent<animator>();
+    //    moverate = 3f;
+    //    damageamount = 6f;
+    //    smoothtime = 1.3f;
+    //    smoothvelocity = vector3.zero;
+    //    dying = false;
+    //}
+
+    private void OnEnable()
+    {
         rdb2 = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         moveRate = 3f;
         damageAmount = 6f;
         smoothTime = 1.3f;
         smoothVelocity = Vector3.zero;
-        dying = false;
-    }
-
-    private void OnEnable()
-    {
         dying = false;
         anim.SetBool("alive", true );
         health.Respawn();

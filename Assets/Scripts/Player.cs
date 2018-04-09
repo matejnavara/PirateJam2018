@@ -22,6 +22,7 @@ using Rewired;
     public Health health;
     public Rigidbody2D rbd2;
     public SpriteRenderer sr;
+    public Animator anim;
 
 
     void Start()
@@ -35,6 +36,7 @@ using Rewired;
         weapon = GetComponentInChildren<Weapon>();
         health = GetComponent<Health>();
         sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
         player = ReInput.players.GetPlayer(playerId);
 
@@ -130,7 +132,7 @@ using Rewired;
 
     public void Hit(float amount, Vector2 direction)
     {
-        //anim.SetTrigger("onHit");
+        anim.SetTrigger("onHit");
         isHit = true;
         hitDuration = hitDurationMax;
         health.Damage(amount);
@@ -141,29 +143,34 @@ using Rewired;
     {
         if (specialTimer.ready && !isAttacking)
         {
-            Vector3 pushPos = transform.position;
-            float radius = 3f;
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(pushPos, radius);
-
-            foreach (Collider2D hit in colliders)
-            {
-                if(hit.tag == "Baby")
-                {
-                    Vector2 force = (hit.transform.position - pushPos).normalized;
-                    hit.GetComponent<Baby>().Hit(force * 5f);
-                }
-                else if (hit.GetComponent<Rigidbody2D>() != null)
-                {
-                    Vector2 force = (hit.transform.position - pushPos).normalized;
-                    hit.GetComponent<Rigidbody2D>().AddForce(force * 6f, ForceMode2D.Impulse);
-                    Debug.Log("KICKING " + hit.name + " with " + force);
-                }
-            }
-            specialTimer.StartTimer(3f);
+            anim.SetTrigger("onSuper");           
         } else
         {
             //still charging notification
         }
+    }
+
+    public void FireSpecial()
+    {
+        Vector3 pushPos = transform.position;
+        float radius = 3f;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(pushPos, radius);
+
+        foreach (Collider2D hit in colliders)
+        {
+            if (hit.tag == "Baby")
+            {
+                Vector2 force = (hit.transform.position - pushPos).normalized;
+                hit.GetComponent<Baby>().Hit(force * 5f);
+            }
+            else if (hit.GetComponent<Rigidbody2D>() != null)
+            {
+                Vector2 force = (hit.transform.position - pushPos).normalized;
+                hit.GetComponent<Rigidbody2D>().AddForce(force * 6f, ForceMode2D.Impulse);
+                Debug.Log("KICKING " + hit.name + " with " + force);
+            }
+        }
+        specialTimer.StartTimer(3f);
     }
 
     public bool IsAttacking()

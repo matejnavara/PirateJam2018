@@ -62,7 +62,6 @@ using Rewired;
         else
         {
             isAlive = false;
-            print("Dead");
         }
 
     }
