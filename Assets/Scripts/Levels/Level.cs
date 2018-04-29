@@ -6,21 +6,14 @@ public class Level : MonoBehaviour
 
     public string levelName;
     public int levelIndex;
-    public string levelMusic;
+    private AudioSource audioSource;
 
     public string getName() { return levelName; }
     public int getIndex() { return levelIndex; }
 
-    public string getMusic()
+    public void Start()
     {
-        if (levelMusic != null)
-        {
-            return levelMusic;
-        }
-        else
-        {
-            string defaultMusic = "";
-            return defaultMusic;
-        }
+        audioSource = GetComponent<AudioSource>();
+        audioSource.Play();
     }
 }

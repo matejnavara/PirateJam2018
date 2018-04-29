@@ -20,8 +20,11 @@ public class Portal : MonoBehaviour {
     private ObjectPool skullPool;
     private ObjectPool demonPool;
 
+    private AudioSource audioSource;
+    public AudioClip[] portalSounds;
+
     public Baby baby;
-    private Progress chargeTimer;
+    private Progress chargeTimer; 
 
     // Use this for initialization
     private void Start()
@@ -31,7 +34,10 @@ public class Portal : MonoBehaviour {
         batPool = PoolObjectManager.Instance.GetPool("BatPool");
         skullPool = PoolObjectManager.Instance.GetPool("SkullPool");
         demonPool = PoolObjectManager.Instance.GetPool("DemonPool");
+        audioSource = GetComponent<AudioSource>();
         chargeTimer = baby.GetComponentInChildren<Progress>();
+
+        PlaySound();
     }
 
     void OnEnable()
@@ -50,6 +56,8 @@ public class Portal : MonoBehaviour {
 
         anim = GetComponent<Animator>();
         anim.SetInteger("PortalLevel", level);
+
+        //PlaySound();
     }
 
     // Update is called once per frame
@@ -81,9 +89,16 @@ public class Portal : MonoBehaviour {
         if (col.gameObject.tag == "Baby" && !charging)
         {
             charging = true;
-            baby.ContactPortal(gameObject.name, true);
         }
 
+    }
+
+    private void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Baby")
+        {
+            baby.ContactPortal(gameObject.name, true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D col)
@@ -108,9 +123,10 @@ public class Portal : MonoBehaviour {
             else if (chargeTimer.complete)
             {
                 level++;
+                PlaySound();
                 anim.SetInteger("PortalLevel", level);
                 spawnTime = spawnBase * level;
-                timeToSpawn = spawnTime / 2;
+                timeToSpawn = spawnTime / 3;
                 activated = true;
                 chargeTimer.complete = false;
             }
@@ -157,5 +173,11 @@ public class Portal : MonoBehaviour {
         if(baby == null) { baby = GameObject.FindGameObjectWithTag("Baby").GetComponent<Baby>(); }
         if(chargeTimer == null) { chargeTimer = baby.GetComponentInChildren<Progress>(); }
         
+    }
+
+    private void PlaySound()
+    {
+        int index = Random.Range(0, portalSounds.Length);
+        audioSource.PlayOneShot(portalSounds[index]);
     }
 }

@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114820967072619176}
   - component: {fileID: 114360092355330326}
   - component: {fileID: 95494073005810586}
+  - component: {fileID: 82108947691389564}
   m_Layer: 0
   m_Name: Skull
   m_TagString: Enemy
@@ -90,6 +91,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6253846, y: 0.6015385}
   m_EdgeRadius: 0
+--- !u!82 &82108947691389564
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1579611371373324}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95494073005810586
 Animator:
   serializedVersion: 3
@@ -125,6 +206,10 @@ MonoBehaviour:
   rgdb: {fileID: 0}
   smoothTime: 0
   smoothVelocity: {x: 0, y: 0, z: 0}
+  spawnSound: {fileID: 8300000, guid: f86077a5834a75f44b1c368b341aa451, type: 3}
+  attackSound: {fileID: 8300000, guid: 8a6e848a11e397a4a941387900269afb, type: 3}
+  hitSound: {fileID: 8300000, guid: 52d82a091c76db84287da6fa74827f60, type: 3}
+  deathSound: {fileID: 8300000, guid: 6dc270a1cafe74a428e473f32a0e94c8, type: 3}
 --- !u!114 &114820967072619176
 MonoBehaviour:
   m_ObjectHideFlags: 1

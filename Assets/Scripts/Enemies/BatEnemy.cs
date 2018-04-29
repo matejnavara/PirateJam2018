@@ -4,27 +4,43 @@ using UnityEngine;
 
 public class BatEnemy : Enemy {
 
+    private GameManager gm;
     private Animator anim;
 
+    private AudioSource audioSource;
+    public AudioClip spawnSound;
+    public AudioClip attackSound;
+    public AudioClip deathSound;
+
     void Start () {
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         anim = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         moveRate = 20f;
         damageAmount = 10f;
+        audioSource.PlayOneShot(spawnSound);
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        if(health.GetCurrentHealth() > 0)
+        if (!gm.isGameOver())
         {
-            Vector2 heading = this.transform.position - player.transform.position;
-            rgdb.AddForce(-heading * moveRate * Time.deltaTime);
+            if(health.GetCurrentHealth() > 0)
+            {
+                Vector2 heading = this.transform.position - player.transform.position;
+                rgdb.AddForce(-heading * moveRate * Time.deltaTime);
+            }
+            else
+            {
+                if (!audioSource.isPlaying)
+                {
+                    audioSource.PlayOneShot(deathSound);
+                }           
+                anim.SetTrigger("onDeath");
+            }
         }
-        else
-        {
-            print(gameObject.name + " DIED");
-            anim.SetTrigger("onDeath");
-        }
+        
         
 	}
 
@@ -38,7 +54,7 @@ public class BatEnemy : Enemy {
     {
         if (col.gameObject.tag == "Player")
         {
-            print("Enemy " + gameObject.name + " attacked player for " + damageAmount + " damage.");
+            audioSource.PlayOneShot(attackSound);
             player.Hit(damageAmount, Vector2.zero);
         }
     }

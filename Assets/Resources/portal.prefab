@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61729833799927836}
   - component: {fileID: 114630235548765344}
   - component: {fileID: 95948008356889054}
+  - component: {fileID: 82100080304114656}
   m_Layer: 0
   m_Name: portal
   m_TagString: Untagged
@@ -68,6 +69,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.58, y: 0.52}
   m_EdgeRadius: 0
+--- !u!82 &82100080304114656
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1841661110087364}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95948008356889054
 Animator:
   serializedVersion: 3
@@ -98,6 +179,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 0
   timeToSpawn: 0
+  portalSounds:
+  - {fileID: 8300000, guid: 593d791bc7bb1eb4db5b1cda4b1e9e65, type: 3}
+  - {fileID: 8300000, guid: a5fa3623f9a38cf4ca45152096b7cddb, type: 3}
+  - {fileID: 8300000, guid: bed11de6df3d3654d94a9e056d9a14ee, type: 3}
   baby: {fileID: 0}
 --- !u!212 &212698145959519574
 SpriteRenderer:

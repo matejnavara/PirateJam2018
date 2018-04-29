@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 50587124894584586}
   - component: {fileID: 61045119230467898}
   - component: {fileID: 95673847525206068}
+  - component: {fileID: 82050863037748020}
   m_Layer: 12
   m_Name: Bat
   m_TagString: Enemy
@@ -90,6 +91,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.27, y: 0.35}
   m_EdgeRadius: 0
+--- !u!82 &82050863037748020
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1497047020538126}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95673847525206068
 Animator:
   serializedVersion: 3
@@ -135,6 +216,10 @@ MonoBehaviour:
   moveRate: 10
   health: {fileID: 0}
   player: {fileID: 0}
+  rgdb: {fileID: 0}
+  spawnSound: {fileID: 8300000, guid: 968aaa0f4160dd64394ed258e6a6bbf8, type: 3}
+  attackSound: {fileID: 0}
+  deathSound: {fileID: 8300000, guid: a61156a6ba5183c43850e2bc4ddbef21, type: 3}
 --- !u!212 &212678857719881504
 SpriteRenderer:
   m_ObjectHideFlags: 1

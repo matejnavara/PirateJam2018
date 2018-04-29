@@ -5,15 +5,21 @@ using UnityEngine;
 public class Weapon : MonoBehaviour {
 
     private Player player;
-    private float attackPower;
     private BoxCollider2D col;
+    private AudioSource audioSource;
+    private float attackPower;
+    private AudioClip playingSound;
 
-	// Use this for initialization
-	void Start () {
+    public AudioClip[] swingSounds;
+    public AudioClip hitSound;
+
+    // Use this for initialization
+    void Start () {
 
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        attackPower = 10f;
         col = GetComponent<BoxCollider2D>();
+        audioSource = GetComponent<AudioSource>();
+        attackPower = 10f;
         SetColliderActive(false);
     }
 
@@ -22,6 +28,7 @@ public class Weapon : MonoBehaviour {
         Debug.Log("Trigger between " + gameObject.name + " and " + col.gameObject.name);
         if (col.tag == "Enemy")
         {
+            audioSource.PlayOneShot(hitSound);
             Debug.Log("TRIGGER Weapon attacked " + col.name + " for " + attackPower + " damage.");
             Vector2 force = (col.transform.position - transform.position).normalized;
             col.GetComponent<Enemy>().Hit(attackPower, force);
@@ -32,5 +39,15 @@ public class Weapon : MonoBehaviour {
     public void SetColliderActive(bool x)
     {
         col.enabled = x;
+    }
+
+    public void SwingSound()
+    {
+        if (!audioSource.isPlaying)
+        {
+            int index = Random.Range(0, swingSounds.Length);
+            audioSource.clip = swingSounds[index];
+            audioSource.Play();
+        }
     }
 }

@@ -5,6 +5,8 @@ using Rewired;
 
  public class Player : MonoBehaviour{
 
+    private GameManager gm;
+
     private int playerId = 0;
     private Rewired.Player player;
 
@@ -24,42 +26,44 @@ using Rewired;
     public SpriteRenderer sr;
     public Animator anim;
 
+    private AudioSource audioSource;
+    public AudioClip[] hitSounds;
+    public AudioClip superSound;
+    public AudioClip deathSound;
 
     void Start()
 	{
-        baseSpeed = 3f;
+        gm = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         rbd2 = GetComponent<Rigidbody2D> ();
-        isAlive = true;
-        isAttacking = false;
-        isHit = false;
-        hitDurationMax = 10f;
         weapon = GetComponentInChildren<Weapon>();
         health = GetComponent<Health>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-
+        audioSource = GetComponent<AudioSource>();
         player = ReInput.players.GetPlayer(playerId);
-
-        moveSpeed = baseSpeed;
-
+        PlayerReset();
     }
 
 	void FixedUpdate()
 	{
-        
-        if(health.GetCurrentHealth() > 0)
+        if (!gm.isGameOver())
         {
+            if(health.GetCurrentHealth() > 0)
+            {
 
-            Attack();
-            Move();
+                Attack();
+                Move();
          
+            }
+            else
+            {
+                if (!audioSource.isPlaying && isAlive)
+                {
+                    audioSource.PlayOneShot(deathSound);
+                }
+                isAlive = false;
+            }
         }
-        else
-        {
-            isAlive = false;
-            print("Dead");
-        }
-
  	}
 
     void Attack()
@@ -69,6 +73,7 @@ using Rewired;
         {
             isAttacking = true;
             weapon.SetColliderActive(true);
+            weapon.SwingSound();
             if (player.GetAxis("MoveHorizontal") >= 0)
             {
                 weapon.transform.Rotate(0, 0, -20f);
@@ -132,6 +137,12 @@ using Rewired;
 
     public void Hit(float amount, Vector2 direction)
     {
+        if (!audioSource.isPlaying)
+        {
+            int index = Random.Range(0, hitSounds.Length);
+            audioSource.clip = hitSounds[index];
+            audioSource.Play();
+        }
         anim.SetTrigger("onHit");
         isHit = true;
         hitDuration = hitDurationMax;
@@ -143,6 +154,10 @@ using Rewired;
     {
         if (specialTimer.ready && !isAttacking)
         {
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(superSound);
+            }
             anim.SetTrigger("onSuper");           
         } else
         {
@@ -186,6 +201,16 @@ using Rewired;
     public bool IsHit()
     {
         return isHit;
+    }
+
+    public void PlayerReset()
+    {
+        isAlive = true;
+        isAttacking = false;
+        isHit = false;
+        hitDurationMax = 10f;
+        baseSpeed = 2f;
+        moveSpeed = baseSpeed;
     }
 
  }
